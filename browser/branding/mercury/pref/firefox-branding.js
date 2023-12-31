@@ -13,7 +13,7 @@ pref("app.update.interval", 86400); // 24 hours
 pref("app.update.promptWaitTime", 691200);
 // URL user can browse to manually if for some reason all update installation
 // attempts fail.
-pref("app.update.url.manual", "https://github.com/Alex313031/Mercury/releases");
+pref("app.update.url.manual", "https://github.com/Alex313031/Mercury-Win7/releases");
 // A default value for the "More information about this update" link
 // supplied in the "An update is available" page of the update wizard.
 pref("app.update.url.details", "https://nightly.mozilla.org");

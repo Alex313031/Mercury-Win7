@@ -1,4 +1,4 @@
-## Building <img src="https://github.com/Alex313031/Mercury/blob/main/logos/build_light.svg#gh-dark-mode-only"> <img src="https://github.com/Alex313031/Mercury/blob/main/logos/build_dark.svg#gh-light-mode-only">
+## Building <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/build_light.svg#gh-dark-mode-only"> <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/build_dark.svg#gh-light-mode-only">
 _**The scripts assume the Mercury source is at $HOME/Mercury/ and Mozilla source is at $HOME/mozilla-unified/. You may have to 'sudo chmod +x' the scripts to make them executable.**_ 
 
 - In general we follow build instructions at https://firefox-source-docs.mozilla.org/setup/linux_build.html
@@ -10,4 +10,4 @@ _**The scripts assume the Mercury source is at $HOME/Mercury/ and Mozilla source
 
 *Happy Mercury Building!*
 
-<img src="https://github.com/Alex313031/Mercury/blob/main/logos/geckoview.svg" width="144">
+<img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/geckoview.svg" width="144">

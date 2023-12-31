@@ -1,4 +1,4 @@
-## Debugging <img src="https://github.com/Alex313031/Mercury/blob/main/logos/bug.svg" width="28">
+## Debugging <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/bug.svg" width="28">
 
 ### Useful cmdline flags
 -new-instance // Open new instance, not a new window in running instance, which allows multiple copies of application to be open at a time. \
