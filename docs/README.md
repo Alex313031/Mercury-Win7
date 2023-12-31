@@ -1,6 +1,6 @@
 ## Mercury Infrastructure (Infra) <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/build_light.svg#gh-dark-mode-only"> <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/build_dark.svg#gh-light-mode-only">
 
-&nbsp;&nbsp;This dir contains files and scripts related to building Mercury and Mozilla Infrastructure.
+&nbsp;&nbsp;This dir contains docs and files related to rebasing/building Mercury and Mozilla Infrastructure.
 
  - The [BUGS.md](BUGS.md) file lists bugs and fixes.
  - The [BUILDING.md](BUILDING.md) file explains the build process.
