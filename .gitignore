@@ -1,0 +1,13 @@
+.DS_Store
+/dist/opt/Alex313031/mercury/*
+/dist/usr/lib/mercury/*
+thumbs.db
+*.deb
+*.exe
+*.tar
+*.bz2
+*.zip
+/mercury/
+/release/
+# Dolphin file manager
+.directory
