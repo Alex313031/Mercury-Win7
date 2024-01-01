@@ -744,7 +744,8 @@ option("--disable-jxl", help="Disable jxl image support")
 
 @depends("--disable-jxl")
 def jxl(value):
-    if value:
+    enabled = bool(value)
+    if enabled:
         return True
 
 

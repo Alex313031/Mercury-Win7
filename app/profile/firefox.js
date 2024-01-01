@@ -311,7 +311,7 @@ pref("browser.startup.couldRestoreSession.count", 0);
 // Show a skeleton UI window prior to loading libxul. Only visible for windows
 // users as it is not implemented anywhere else.
 #if defined(XP_WIN)
-pref("browser.startup.preXulSkeletonUI", false);
+pref("browser.startup.preXulSkeletonUI", true);
 #endif
 
 // Show an upgrade dialog on major upgrades.
@@ -371,7 +371,7 @@ pref("browser.urlbar.autoFill.adaptiveHistory.enabled", false);
 pref("browser.urlbar.autoFill.adaptiveHistory.minCharsThreshold", 0);
 
 // Whether to warm up network connections for autofill or search results.
-pref("browser.urlbar.speculativeConnect.enabled", false);
+pref("browser.urlbar.speculativeConnect.enabled", true);
 
 // Whether bookmarklets should be filtered out of Address Bar matches.
 // This is enabled for security reasons, when true it is still possible to
@@ -1139,7 +1139,7 @@ pref("browser.sessionstore.privacy_level", 0);
 pref("browser.sessionstore.max_tabs_undo", 255);
 // how many windows can be reopened (per session) - on non-OS X platforms this
 // pref may be ignored when dealing with pop-up windows to ensure proper startup
-pref("browser.sessionstore.max_windows_undo", 16);
+pref("browser.sessionstore.max_windows_undo", 32);
 // number of crashes that can occur before the about:sessionrestore page is displayed
 // (this pref has no effect if more than 6 hours have passed since the last crash)
 pref("browser.sessionstore.max_resumed_crashes", 1);
@@ -1234,7 +1234,7 @@ pref("places.frecency.origins.alternative.featureGate", false);
 pref("places.forgetThisSite.clearByBaseDomain", true);
 
 // Whether to warm up network connections for places: menus and places: toolbar.
-pref("browser.places.speculativeConnect.enabled", false);
+pref("browser.places.speculativeConnect.enabled", true);
 
 // if true, use full page zoom instead of text zoom
 pref("browser.zoom.full", true);
@@ -1838,6 +1838,9 @@ pref("dom.debug.propagate_gesture_events_through_content", false);
 
 // CustomizableUI debug logging.
 pref("browser.uiCustomization.debug", false);
+
+// CustomizableUI state of the browser's user interface
+// pref("browser.uiCustomization.state", "");
 
 // If set to false, FxAccounts and Sync will be unavailable.
 // A restart is mandatory after flipping that preference.
