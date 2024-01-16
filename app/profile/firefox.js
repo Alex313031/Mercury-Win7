@@ -1535,6 +1535,8 @@ pref("layers.acceleration.force-enabled", true);
 // Always show menu bar and view image info.
 // pref("ui.key.menuAccessKeyFocuses", false);
 pref("browser.menu.showViewImageInfo", true);
+// Use Windows 7 Native Scrollbars
+pref("widget.non-native-theme.enabled", false);
 // Disable overlay scrollbars on Linux.
 #if defined(XP_LINUX)
   pref("widget.gtk.overlay-scrollbars.enabled", false);

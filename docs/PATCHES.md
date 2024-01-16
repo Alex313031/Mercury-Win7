@@ -11,6 +11,8 @@
  - Restore top bar to ~ESR78 state with home button and developer button.
  - Allow installing unsigned extensions.
  - Branding changes
+ - Enable [JPEG XL](https://jpegxl.info/) by default
+ - Use Windows 7's native scrollbars by default > https://github.com/ephemeralViolette/firefox-native-controls
 
 &ndash; Some help in creating these patches came from [LibreWolf](https://librewolf.net/), [Waterfox](https://www.waterfox.net/), [FireDragon](https://github.com/dr460nf1r3/firedragon-browser), [PlasmaFox](https://github.com/torvic9/plasmafox), [Ghostery](https://github.com/ghostery/user-agent-desktop), and [GNU IceCat](https://www.gnu.org/software/gnuzilla/).
 
