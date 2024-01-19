@@ -247,7 +247,7 @@ pref("browser.fixup.domainsuffixwhitelist.local", true);
 pref("browser.fixup.dns_first_for_single_words", false);
 
 #ifdef UNIX_BUT_NOT_MAC
-  pref("general.autoScroll", false);
+  pref("general.autoScroll", true);
 #else
   pref("general.autoScroll", true);
 #endif
@@ -1514,7 +1514,8 @@ pref("services.sync.prefs.sync.ui.osk.enabled", true);
 pref("privacy.donottrackheader.enabled", true);
 pref("privacy.globalprivacycontrol.enabled", true);
 pref("privacy.globalprivacycontrol.functionality.enabled", true);
-//Disable more telemetry
+// Disable more telemetry
+pref("toolkit.telemetry.enabled", false);
 pref("toolkit.telemetry.pioneer-new-studies-available", false);
 // Disable Auto Update
 pref("app.update.auto", false);
@@ -1678,7 +1679,7 @@ pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features", true)
 pref("browser.newtabpage.activity-stream.asrouter.useRemoteL10n", true);
 
 // These prefs control if Discovery Stream is enabled.
-pref("browser.newtabpage.activity-stream.discoverystream.enabled", true);
+pref("browser.newtabpage.activity-stream.discoverystream.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hardcoded-basic-layout", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hybridLayout.enabled", false);
 pref("browser.newtabpage.activity-stream.discoverystream.hideCardBackground.enabled", false);
@@ -2884,7 +2885,7 @@ pref("first-startup.timeout", 30000);
 #ifdef MOZ_DEV_EDITION
   pref("browser.menu.showViewImageInfo", true);
 #else
-  pref("browser.menu.showViewImageInfo", false);
+  pref("browser.menu.showViewImageInfo", true);
 #endif
 
 // Handing URLs to external apps via the "Share URL" menu item could allow a proxy bypass
