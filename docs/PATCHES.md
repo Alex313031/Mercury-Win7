@@ -1,6 +1,6 @@
 <img src="https://github.com/Alex313031/Mercury-Win7/blob/main/logos/Mercury_256.png" width="144">
 
-## List of patches included in Mercury <img src="https://raw.githubusercontent.com/Alex313031/Mercury/main/logos/patches.png" width="32">
+## List of patches included in Mercury <img src="https://raw.githubusercontent.com/Alex313031/Mercury-Win7/main/logos/patches.png" width="32">
 
  - Compiler modifications include [AVX](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions), [AES](https://en.wikipedia.org/wiki/AES_instruction_set), [LTO](https://en.wikipedia.org/wiki/Interprocedural_optimization#WPO_and_LTO) and [PGO](https://en.wikipedia.org/wiki/Profile-guided_optimization).
  - Disable all telemetry and reporting.
@@ -13,6 +13,7 @@
  - Branding changes
  - Enable [JPEG XL](https://jpegxl.info/) by default
  - Use Windows 7's native scrollbars by default > https://github.com/ephemeralViolette/firefox-native-controls
+ - Implemented performance tweaks from [BetterFox](https://github.com/yokoffing/Betterfox).
 
 &ndash; Some help in creating these patches came from [LibreWolf](https://librewolf.net/), [Waterfox](https://www.waterfox.net/), [FireDragon](https://github.com/dr460nf1r3/firedragon-browser), [PlasmaFox](https://github.com/torvic9/plasmafox), [Ghostery](https://github.com/ghostery/user-agent-desktop), and [GNU IceCat](https://www.gnu.org/software/gnuzilla/).
 
