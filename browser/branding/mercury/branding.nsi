@@ -21,7 +21,7 @@
 !define URLStubDownloadAArch64 "https://github.com/Alex313031/Mercury-Win7/releases"
 !define URLManualDownload "https://github.com/Alex313031/Mercury-Win7/releases"
 !define URLSystemRequirements "https://www.mozilla.org/firefox/system-requirements/"
-!define Channel "unofficial"
+!define Channel "esr115"
 
 # The installer's certificate name and issuer expected by the stub installer
 !define CertNameDownload   "Mozilla Corporation"
