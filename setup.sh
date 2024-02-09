@@ -21,6 +21,7 @@ displayHelp () {
 	printf "${bold}${GRE}Script to copy Mercury source files over the Mozilla source tree.${c0}\n" &&
 	printf "${bold}${YEL}Use the --win flag to copy the Windows mozconfig${c0}\n" &&
 	printf "${bold}${YEL}Use the --cross flag to copy the Windows cross-compile mozconfig${c0}\n" &&
+	printf "${bold}${YEL}Use the --cross-avx2 flag to copy the Windows AVX2 cross-compile mozconfig${c0}\n" &&
 	printf "${bold}${YEL}Use the --sse3 flag to make an SSE3 build${c0}\n" &&
 	printf "${bold}${YEL}Use the --win-sse3 flag to make an SSE3 Windows build${c0}\n" &&
 	printf "${bold}${YEL}Use the --sse4 flag to make an SSE4.1 build${c0}\n" &&
@@ -69,7 +70,7 @@ copyWin () {
 	printf "\n" &&
 	printf "${GRE}Copying Windows (Native Build) mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-win ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--win) copyWin;
@@ -79,7 +80,7 @@ copyWinCross () {
 	printf "\n" &&
 	printf "${GRE}Copying Windows (Cross Compile) mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-win-cross ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win-cross ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--cross) copyWinCross;
@@ -89,7 +90,7 @@ copySSE3 () {
 	printf "\n" &&
 	printf "${GRE}Copying SSE3 mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-sse3 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-sse3 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--sse3) copySSE3;
@@ -99,7 +100,7 @@ copyWinSSE3 () {
 	printf "\n" &&
 	printf "${GRE}Copying Windows SSE3 mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-win-sse3 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win-sse3 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--win-sse3) copyWinSSE3;
@@ -109,7 +110,7 @@ copySSE41 () {
 	printf "\n" &&
 	printf "${GRE}Copying SSE4.1 mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-sse4 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-sse4 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--sse4) copySSE41;
@@ -119,7 +120,7 @@ copyWinSSE41 () {
 	printf "\n" &&
 	printf "${GRE}Copying Windows SSE4.1 mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-win-sse4 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win-sse4 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--win-sse4) copyWinSSE41;
@@ -130,7 +131,7 @@ copyAVX2 () {
 	printf "${GRE}Copying AVX2 mozconfig${c0}\n" &&
 	printf "\n" &&
 	cp -v mozconfigs/context.py ${HG_SRC_DIR}/python/mozbuild/mozbuild/frontend/ &&
-	cp -r -v mozconfigs/mozconfig-avx2 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-avx2 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--avx2) copyAVX2;
@@ -141,17 +142,28 @@ copyWinAVX2 () {
 	printf "${GRE}Copying Windows AVX2 mozconfig${c0}\n" &&
 	printf "\n" &&
 	cp -v mozconfigs/context.py ${HG_SRC_DIR}/python/mozbuild/mozbuild/frontend/ &&
-	cp -r -v mozconfigs/mozconfig-win-avx2 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win-avx2 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--win-avx2) copyWinAVX2;
+esac
+
+copyWinCrossAVX2 () {
+	printf "\n" &&
+	printf "${GRE}Copying Windows AVX2 (Cross Compile) mozconfig${c0}\n" &&
+	printf "\n" &&
+	cp -v mozconfigs/context.py ${HG_SRC_DIR}/python/mozbuild/mozbuild/frontend/ &&
+	cp -v mozconfigs/mozconfig-win-avx2-cross ${HG_SRC_DIR}/mozconfig
+}
+case $1 in
+	--cross-avx2) copyWinCrossAVX2;
 esac
 
 copyDebug () {
 	printf "\n" &&
 	printf "${GRE}Copying debug mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-debug ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-debug ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--debug) copyDebug;
@@ -161,7 +173,7 @@ copyWinDebug () {
 	printf "\n" &&
 	printf "${GRE}Copying Windows debug mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-win-debug ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-win-debug ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--win-debug) copyWinDebug;
@@ -172,7 +184,7 @@ copyMac () {
 	printf "${GRE}Copying MacOS x64 mozconfig${c0}\n" &&
 	printf "\n" &&
 	cp -v mozconfigs/context.py ${HG_SRC_DIR}/python/mozbuild/mozbuild/frontend/ &&
-	cp -r -v mozconfigs/mozconfig-macos-x64 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-macos-x64 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--mac) copyMac;
@@ -182,7 +194,7 @@ copyMacArm () {
 	printf "\n" &&
 	printf "${GRE}Copying MacOS ARM64 mozconfig${c0}\n" &&
 	printf "\n" &&
-	cp -r -v mozconfigs/mozconfig-macos-arm64 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-macos-arm64 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--mac-arm) copyMacArm;
@@ -193,7 +205,7 @@ copyLinuxArm64 () {
 	printf "${GRE}Copying Linux ARM64 mozconfig${c0}\n" &&
 	printf "\n" &&
 	cp -v mozconfigs/context.py ${HG_SRC_DIR}/python/mozbuild/mozbuild/frontend/ &&
-	cp -r -v mozconfigs/mozconfig-arm64 ${HG_SRC_DIR}/mozconfig
+	cp -v mozconfigs/mozconfig-arm64 ${HG_SRC_DIR}/mozconfig
 }
 case $1 in
 	--arm64) copyLinuxArm64;
