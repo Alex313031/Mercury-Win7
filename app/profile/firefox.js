@@ -150,9 +150,10 @@ pref("app.update.notifyDuringDownload", false);
 // Enable Do Not Track and GPC by default.
 pref("privacy.donottrackheader.enabled", true);
 pref("privacy.globalprivacycontrol.enabled", true);
-pref("privacy.globalprivacycontrol.functionality.enabled", true);
 // Disable more telemetry
 pref("toolkit.telemetry.enabled", false);
+pref("browser.ping-centre.telemetry", false);
+pref("browser.attribution.enabled", false);
 pref("toolkit.telemetry.pioneer-new-studies-available", false);
 // Disable Auto Update
 pref("app.update.auto", false);
@@ -173,8 +174,6 @@ pref("layers.acceleration.force-enabled", true);
 // Always show menu bar and view image info.
 // pref("ui.key.menuAccessKeyFocuses", false);
 pref("browser.menu.showViewImageInfo", true);
-// Use Windows 7 Native Scrollbars
-pref("widget.non-native-theme.enabled", false);
 // Disable overlay scrollbars on Linux.
 #if defined(XP_LINUX)
   pref("widget.gtk.overlay-scrollbars.enabled", false);
@@ -1344,7 +1343,7 @@ pref("app.feedback.baseURL", "https://ideas.mozilla.org/");
 // Name of alternate about: page for certificate errors (when undefined, defaults to about:neterror)
 pref("security.alternate_certificate_error_page", "certerror");
 
-pref("security.certerrors.recordEventTelemetry", true);
+pref("security.certerrors.recordEventTelemetry", false);
 pref("security.certerrors.permanentOverride", true);
 pref("security.certerrors.mitm.priming.enabled", true);
 pref("security.certerrors.mitm.priming.endpoint", "https://mitmdetection.services.mozilla.com/");
@@ -1620,7 +1619,7 @@ pref("browser.topsites.contile.endpoint", "https://contile.services.mozilla.com/
 
 // Whether to enable the Share-of-Voice feature for Sponsored Topsites via Contile.
 #if defined(EARLY_BETA_OR_EARLIER)
-  pref("browser.topsites.contile.sov.enabled", true);
+  pref("browser.topsites.contile.sov.enabled", false);
 #else
   pref("browser.topsites.contile.sov.enabled", false);
 #endif
@@ -1814,9 +1813,9 @@ pref("pdfjs.handleOctetStream", true);
 // Is the sidebar positioned ahead of the content browser
 pref("sidebar.position_start", true);
 
-pref("security.identitypopup.recordEventTelemetry", true);
-pref("security.protectionspopup.recordEventTelemetry", true);
-pref("security.app_menu.recordEventTelemetry", true);
+pref("security.identitypopup.recordEventTelemetry", false);
+pref("security.protectionspopup.recordEventTelemetry", false);
+pref("security.app_menu.recordEventTelemetry", false);
 
 // Block insecure active content on https pages
 pref("security.mixed_content.block_active_content", true);
