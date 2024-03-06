@@ -31,6 +31,7 @@ ac_add_options --enable-optimize="-O2 -O3 -msse3 -mssse3 -msse4.1 -Xclang -O3"
 ac_add_options --enable-rust-simd
 ac_add_options --enable-hardening
 #ac_add_options --disable-trace-logging
+export MOZILLA_OFFICIAL=1
 mk_add_options MOZ_OPTIMIZE=1
 MOZ_OPTIMIZE=1
 export MOZ_OPTIMIZE=1
@@ -60,13 +61,11 @@ export MOZ_SOURCE_CHANGESET=${changeset}
 mk_add_options MOZ_CRASHREPORTER=0
 mk_add_options MOZ_DATA_REPORTING=0
 mk_add_options MOZ_SERVICES_HEALTHREPORT=0
-mk_add_options MOZ_TELEMETRY_REPORTING=0
-MOZ_CRASHREPORTER=0
-MOZ_DATA_REPORTING=0
-MOZ_REQUIRE_SIGNING=
+mk_add_options MOZ_TELEMETRY_REPORTING=
 export MOZ_CRASHREPORTER=0
 export MOZ_DATA_REPORTING=0
 export MOZ_REQUIRE_SIGNING=
+export MOZ_TELEMETRY_REPORTING=
 
 # Installer
 export WIN32_REDIST_DIR="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Redist/MSVC/14.38.33130/x64/Microsoft.VC143.CRT"
@@ -99,11 +98,17 @@ ac_add_options MOZ_LTO=cross
 export MOZ_PGO=1
 ac_add_options MOZ_PGO=1
 
+if test "$GEN_PGO"; then
+    ac_add_options --enable-profile-generate
+elif test "$USE_PGO"; then
+    ac_add_options --enable-profile-use=cross
+fi
+
 # Compiler, Linker, and Rust flags
 export CFLAGS="-O3 -msse3 -mssse3 -msse4.1 /clang:-O3"
 export CPPFLAGS="-O3 -msse3 -mssse3 -msse4.1 /clang:-O3"
 export CXXFLAGS="-O3 -msse3 -mssse3 -msse4.1 /clang:-O3"
 export LDFLAGS="-Wl,-O3 -msse3 -mssse3 -msse4.1"
-#export MOZ_LTO_LDFLAGS="-mllvm:-polly"
+POLLY="-mllvm -polly -mllvm -polly-2nd-level-tiling -mllvm -polly-loopfusion-greedy -mllvm -polly-pattern-matching-based-opts -mllvm -polly-position=before-vectorizer -mllvm -polly-vectorizer=stripmine"
 export RUSTFLAGS="-C target-feature=+sse4.1"
 export VERBOSE=1
