@@ -246,6 +246,7 @@ var CustomizableUIInternal = {
       "urlbar-container",
       "downloads-button",
       "developer-button",
+      "unified-extensions-button",
       "fxa-toolbar-menu-button",
     ].filter(name => name);
 

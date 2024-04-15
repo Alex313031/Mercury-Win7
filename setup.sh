@@ -66,7 +66,8 @@ mkdir -p -v ${HG_SRC_DIR}/policies &&
 cp -r -v ./policies/. ${HG_SRC_DIR}/policies/ &&
 cp -r -v ./toolkit/. ${HG_SRC_DIR}/toolkit/ &&
 cp -r -v ./widget/. ${HG_SRC_DIR}/widget/ &&
-cp -r -v ./mozconfigs/mozconfig ${HG_SRC_DIR} &&
+cp -v ./mozconfigs/ga ${HG_SRC_DIR} &&
+cp -v ./mozconfigs/mozconfig ${HG_SRC_DIR} &&
 
 copyWin () {
 	printf "\n" &&

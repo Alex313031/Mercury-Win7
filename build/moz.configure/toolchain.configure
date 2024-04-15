@@ -3191,6 +3191,7 @@ def path_remappings(target, build_env, sysroot_path, windows_sdk_dir, vc_path):
 set_config("MMX_FLAGS", ["-mmmx"])
 set_config("SSE_FLAGS", ["-msse"])
 set_config("SSE2_FLAGS", ["-msse2"])
+set_config("SSE3_FLAGS", ["-msse3"])
 set_config("SSSE3_FLAGS", ["-mssse3"])
 set_config("SSE4_1_FLAGS", ["-msse4.1"])
 set_config("SSE4_2_FLAGS", ["-msse4.2"])
