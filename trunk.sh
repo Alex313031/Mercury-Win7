@@ -39,7 +39,7 @@ printf "${bold}${GRE}Script to Rebase/Sync Mozilla repo.${c0}\n" &&
 printf "\n" &&
 printf "${YEL}Rebasing/Syncing with mozilla-unified Mercurial repository...${c0}\n" &&
 
-MERCURY_BRANCH="esr115"
+MERCURY_BRANCH="64fc0d6e7ff6b1d626e40d45c492fa210591a1c0"
 export MERCURY_BRANCH &&
 
 cd ${HG_SRC_DIR} &&
