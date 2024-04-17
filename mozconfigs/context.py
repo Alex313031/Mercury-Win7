@@ -390,10 +390,12 @@ class HostCompileFlags(BaseCompileFlags):
         BaseCompileFlags.__init__(self, context)
 
     def _optimize_flags(self):
-        # We don't use MOZ_OPTIMIZE here because we don't want
-        # --disable-optimize to make in-tree host tools slow. Doing so can
-        # potentially make build times significantly worse.
-        return self._context.config.substs.get("HOST_OPTIMIZE_FLAGS") or []
+        optimize_flags = []
+        if self._context.config.substs.get("CROSS_COMPILE"):
+            optimize_flags += self._context.config.substs.get("HOST_OPTIMIZE_FLAGS")
+        elif self._context.config.substs.get("MOZ_OPTIMIZE"):
+            optimize_flags += self._context.config.substs.get("MOZ_OPTIMIZE_FLAGS")
+        return optimize_flags
 
 
 class AsmFlags(BaseCompileFlags):
@@ -421,7 +423,7 @@ class AsmFlags(BaseCompileFlags):
                     debug_flags += ["-F", "dwarf"]
             elif (
                 self._context.config.substs.get("OS_ARCH") == "WINNT"
-                and self._context.config.substs.get("TARGET_CPU") == "aarch64"
+                and self._context.config.substs.get("CPU_ARCH") == "aarch64"
             ):
                 # armasm64 accepts a paucity of options compared to ml/ml64.
                 pass
@@ -488,6 +490,7 @@ class LinkFlags(BaseCompileFlags):
                 not self._context.config.substs.get("MOZ_DEBUG"),
             ]
         ):
+
             if self._context.config.substs.get("MOZ_OPTIMIZE"):
                 flags.append("-OPT:REF,ICF")
 
