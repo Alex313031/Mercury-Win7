@@ -61,6 +61,5 @@ printf "${GRE}Running \`./mach bootstrap\`...${c0}\n" &&
 ./mach bootstrap &&
 
 printf "\n" &&
-
-printf "${GRE}Done! ${YEL}You can now run ./setup.sh${c0}\n" &&
+printf "${GRE}Done! ${YEL}You can now run ./setup.sh\n" &&
 tput sgr0
