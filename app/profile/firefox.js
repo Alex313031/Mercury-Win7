@@ -2304,7 +2304,7 @@ pref("browser.migrate.preferences-entrypoint.enabled", true);
 pref("browser.device-migration.help-menu.hidden", false);
 
 pref("extensions.pocket.api", "");
-pref("extensions.pocket.bffApi", "firefox-api-proxy.cdn.mozilla.net");
+pref("extensions.pocket.bffApi", "");
 pref("extensions.pocket.bffRecentSaves", false);
 pref("extensions.pocket.enabled", false);
 pref("extensions.pocket.oAuthConsumerKey", "");
@@ -2531,9 +2531,9 @@ pref("devtools.command-button-rulers.enabled", false);
 pref("devtools.command-button-measure.enabled", false);
 pref("devtools.command-button-noautohide.enabled", false);
 pref("devtools.command-button-errorcount.enabled", true);
-#ifndef MOZILLA_OFFICIAL
+// #ifndef MOZILLA_OFFICIAL
   pref("devtools.command-button-experimental-prefs.enabled", true);
-#endif
+// #endif
 
 // Inspector preferences
 // Enable the Inspector
