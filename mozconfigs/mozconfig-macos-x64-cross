@@ -66,8 +66,8 @@ export MOZ_REQUIRE_SIGNING=
 export MOZ_TELEMETRY_REPORTING=
 
 # API Keys
-ac_add_options --with-google-location-service-api-keyfile=ga
-ac_add_options --with-google-safebrowsing-api-keyfile=ga
+ac_add_options --with-google-location-service-api-keyfile=@TOPSRCDIR@/ga
+ac_add_options --with-google-safebrowsing-api-keyfile=@TOPSRCDIR@/ga
 
 # Branding
 ac_add_options --with-app-name=mercury
@@ -79,7 +79,6 @@ ac_add_options --with-distribution-id=com.alex313031.mercury
 
 # Make flags (set to number of CPU cores)
 mk_add_options MOZ_MAKE_FLAGS="-j5"
-export MOZ_MAKE_FLAGS="-j5"
 
 # Autoclobber
 mk_add_options AUTOCLOBBER=1
